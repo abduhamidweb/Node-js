@@ -215,8 +215,7 @@
     //         lon qilish va funksiyalarni e 'lon qilish qismini tushunish) ta'
     //         sir qiladi.Boshqa bir ifoda, ifoda qismiga hoisting ta 'siri yo'
     //         q.
-}
-{
+} {
     // Errors
     // JavaScriptda sodir bo 'ladigan xatolar turli turdagi bo'
     // lishi mumkin.Quyidagi xatolar bilan tanishib chiqamiz:
@@ -238,5 +237,73 @@
     // RangeError: Bu xato sifat chegaralari bilan bog 'liq bo'
     // ladi.Misol uchun, massivning indeksi qaror qilingan chegaradan tashqari bo 'lsa yoki funksiya rekursiv qo'
     // llanilgan holda chegaralar tashlab ketgan bo 'lsa RangeError xatoligi yuzaga kelishi mumkin.
+    // RangeError ga misol:
+    function calculateFactorial(n) {
+        if (n < 0) {
+            throw new RangeError("The number must be non-negative.");
+        }
 
+        let factorial = 1;
+        for (let i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+
+        return factorial;
+    }
+
+    try {
+        let result = calculateFactorial(5);
+        console.log(result);
+    } catch (error) {
+        console.log(error);
+    }
+    // EvalError: Bu xato eval() funktsiyasi 
+    // ishlatilayotganda yuzaga keladi.EvalError dastur bajarilayotgan paytda eval() funktsiyasi xatolik yuzaga kelsa chiqadi.
+} {
+    // LocalStorage: LocalStorage obyekti, brauzer sessiyasining oxirigacha(browser session end) saqlanadi.Bu yozuvli xotira obyekti, brauzer yopilgan yoki qayta ochilganida ham saqlanadi.Uning qiymatlari brauzer yopilgandan keyin ham o 'chirilmaydi, manba sifatida ma'
+    // lumotlar saqlanadi.LocalStorage orqali saqlangan ma 'lumotlar brauzer, domen yoki brauzerda ochiq bo'
+    // lgan barcha sahifalar uchun qo 'llanilishi mumkin.
+
+    // SessionStorage: SessionStorage obyekti, brauzer sessiyasiga tegishli yozuvli xotira obyekti hisoblanadi.Bu saqlash obyekti, faqat brauzer sessiyasining davomida ma 'lumotlarni saqlaydi. Agar brauzer yopilsa yoki brauzerda yangi sessiya boshlangan bo'
+    // lsa, SessionStorage ma 'lumotlari yo'
+    // qoladi.SessionStorage orqali saqlangan ma 'lumotlar faqat bir sessiya davomida (sessiya muddati) foydalanish uchun mo'
+    // ljallangan.
+
+    // LocalStorage va SessionStorage bilan ma 'lumotlarni saqlash va o'
+    // qish - qaytarishning oson interfeysi mavjud.Ularning key - value jadvali shaklida ishlaydi, yani ma 'lumotlar kalit (key) va qiymat (value) juftligi sifatida saqlanadi. Buning uchun setItem, getItem, removeItem, clear va boshqalar kabi metodlardan foydalaniladi.
+} {
+    // Obj turlari
+
+    // Literal usul: Obyektni qavs ichida qo 'llab-quvvatlangan kalitlar (properties) va ularning qiymatlari (values) bilan to'
+    // ldirib yaratish mumkin.
+    const person = {
+        name: 'John',
+        age: 30,
+        gender: 'male'
+    };
+    // Constructor usul: Obyekt yaratish uchun "Object" sinfi konstruktori ishlatiladi.
+    const person2 = new Object();
+    person2.name = 'John';
+    person2.age = 30;
+    person2.gender = 'male';
+    // Object.create() usuli: Bu usul orqali mavjud obyektdan yangi obyekt nusxalash uchun ishlatiladi.
+    const existingObj = {
+        name: 'John',
+        age: 30
+    };
+    const person3 = Object.create(existingObj);
+    person3.gender = 'male';
+    // Class usuli: JavaScript ES6 dan boshlab klasslarni ham qo'llash mumkin. Klass yordamida obyekt yaratishning oson va qulay usuli mavjud.
+    class Person {
+        constructor(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+    }
+
+    const person4 = new Person('John', 30, 'male');
+    // Har bir usul obyektlarni yaratish uchun mos keladigan kontekst va talablarga ega bo 'lishi mumkin. Shu bilan birga, literal usul foydalanish oson va qulay, ammo yagona joyda obyekt yaratish uchun mos kelishi mumkin. Boshqalar esa mavjud obyektlardan nusxa olish yoki klasslardan foydalanishni o'
+    // zlashtiradi.Shaxsiy ehtiyojlar va dastur talablari bo 'yicha mos keluvchi usulni tanlash mavjud bo'
+    // ladi.
 }
