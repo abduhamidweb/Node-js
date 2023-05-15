@@ -215,5 +215,28 @@
     //         lon qilish va funksiyalarni e 'lon qilish qismini tushunish) ta'
     //         sir qiladi.Boshqa bir ifoda, ifoda qismiga hoisting ta 'siri yo'
     //         q.
+}
+{
+    // Errors
+    // JavaScriptda sodir bo 'ladigan xatolar turli turdagi bo'
+    // lishi mumkin.Quyidagi xatolar bilan tanishib chiqamiz:
+
+    //     SyntaxError: Bu xato dastur sintaksisida yozilgan muammolar yoki sintaksis qoidalariga riayat etilmaganlik bilan bog 'liq bo'
+    // ladi.Misol uchun, qo 'shimcha belgilar qo'
+    // shilmagan qism, o 'zgaruvchan nomining noto'
+    // g 'ri formati, qavs ichida so'
+    // zlar joylashtirmaslik, aniqlik belgisi(;) kiritmaganlik kabi holatlar SyntaxError yuzaga kelishi mumkin.
+
+    // ReferenceError: Bu xato nomlanmagan o 'zgaruvchini yoki funksiyani chaqirish bilan bog'
+    // liq bo 'ladi. Agar o'
+    // zgaruvchan nomi noto 'g'
+    // ri yozilsa yoki nomi deklaratsiya qilingan joydan oldin chaqirilsa yoki nomi yalniz bitta obyektda mavjud bo 'lgan joydan chaqirilsa ReferenceError xatoligi yuzaga keladi.
+
+    // TypeError: Bu xato yaroqli ma 'lumot turi bilan amal bajarishga urinishda yuzaga keladi. Misol uchun, sonlar bilan matematik amallar bajarishda matn (string) kiritish yoki funksiya qaytarish kerak bo'
+    // lgan joyda obyekt(object) kiritish kabi holatlar TypeError xatoligiga olib kelishi mumkin.
+
+    // RangeError: Bu xato sifat chegaralari bilan bog 'liq bo'
+    // ladi.Misol uchun, massivning indeksi qaror qilingan chegaradan tashqari bo 'lsa yoki funksiya rekursiv qo'
+    // llanilgan holda chegaralar tashlab ketgan bo 'lsa RangeError xatoligi yuzaga kelishi mumkin.
 
 }
