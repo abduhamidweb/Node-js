@@ -306,4 +306,46 @@
     // Har bir usul obyektlarni yaratish uchun mos keladigan kontekst va talablarga ega bo 'lishi mumkin. Shu bilan birga, literal usul foydalanish oson va qulay, ammo yagona joyda obyekt yaratish uchun mos kelishi mumkin. Boshqalar esa mavjud obyektlardan nusxa olish yoki klasslardan foydalanishni o'
     // zlashtiradi.Shaxsiy ehtiyojlar va dastur talablari bo 'yicha mos keluvchi usulni tanlash mavjud bo'
     // ladi.
+} {
+    // call, apply va bind JavaScriptda funksiyalarni chaqirish va obyektlarga bog 'lash uchun ishlatiladigan metodlardir.
+
+    // call: call metodi funktsiyani bajarish uchun ishlatiladi va unga berilgan obyektni funksiyaning this qiymatiga o 'rnata yozadi. Qolgan argumentlar esa funktsiyaga to'
+    // g 'ri keladi.
+    function sayHello() {
+        console.log(`Salom, mening ismim ${this.name}`);
+    }
+
+    const person = {
+        name: 'John'
+    };
+
+    sayHello.call(person); // Output: Salom, mening ismim John
+    // Ushbu misolda call metodi sayHello funktsiyasini person obyekti bilan bajaradi.this qiymati person obyekti bo 'ladi.
+
+    // apply: apply metodi ham funktsiyani bajarish uchun ishlatiladi, lekin argumentlar ro 'yxatini qabul qiladi. Funktsiyaga berilgan obyekt esa this qiymatiga o'
+    // rnata yoziladi.
+    function sayHello(greeting) {
+        console.log(`${greeting}, mening ismim ${this.name}`);
+    }
+
+    const perso5n = {
+        name: 'John'
+    };
+
+    sayHello.apply(perso5n, ['Salom']); // Output: Salom, mening ismim John
+    // Ushbu misolda apply metodi sayHello funktsiyasini person obyekti bilan bajaradi va['Salom'] ro 'yxatini argumentlar sifatida beradi.
+
+    // bind: bind metodi funktsiyani obyektlarga bog 'lash uchun ishlatiladi, lekin funktsiyani bajarishga o'
+    // zgartirilgan yangi funktsiya nusxasini qaytaradi.Qaytarilgan nusxa esa keyingi vaqtlarda chaqirilish uchun ishlatiladi.
+    function sayHello() {
+        console.log(`Salom, mening ismim ${this.name}`);
+    }
+
+    const person6 = {
+        name: 'John'
+    };
+
+    const sayHelloToPerson = sayHello.bind(person6);
+    sayHelloToPerson(); // Output: Salom, mening ismim John
+
 }
