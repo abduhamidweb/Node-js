@@ -168,3 +168,52 @@
     // Ushbu misolda BankAccount nomli class yaratilgan.Bu class #balance xususiyati(ichki xususiyat) va deposit, withdraw, getBalance metodlari bilan ishlaydi.deposit metodi hisobga pul qo 'shish imkonini beradi, withdraw metodi pul yechish imkonini beradi va getBalance metodi joriy hisobni chiqarib beradi. #balance xususiyati esa privat (kichik harf bilan boshlanishi) bo'
     // lib, faqat class ichida foydalanilishi mumkin.Misolning oxirida account obyekti yaratiladi va ushbu obyektni yordamida metodlar ishlatiladi.
 }
+
+
+{
+    // Hosting
+
+
+
+    // JavaScriptda "hosting"
+    // deya nomlanadigan usul va kontsept mavjud.Bu usul JavaScript dasturlarida o 'zgaruvchanlar (variables) va funksiyalar (functions)ni o'
+    // zgaruvchanlikning amal qilishi oldida deklaratsiya qilishga imkon beradi.
+
+    // JavaScriptda barcha o 'zgaruvchanlar va funksiyalar, kod bajarilgandan oldin "hoisting" jarayoni orqali e'
+    // lon qilinadi.Bu, JavaScript muhitida o 'zgaruvchanlar va funksiyalar e'
+    // lon qilingandan oldin ularning ma 'lumotlari va qoidalar to'
+    // plamining yadrosida saqlanishi demakdir.
+
+    // O 'zgaruvchan hoistingida, o'
+    // zgaruvchanlar
+    // var kalit so 'zi bilan deklaratsiya qilinsa, ularning e'
+    // lon qilingan joyi yo 'qoladi. Bu degani, o'
+    // zgaruvchan e 'lon qilingandan keyin ham u koddan oldingi qismda foydalanish mumkin.
+
+    console.log(name); // undefined
+    var name = "John";
+    console.log(name); // John
+    // Bu misolda, name o 'zgaruvchisi ifodalangan joydan oldin deklaratsiya qilingan, lekin qiymati belgilanmagan. Bu erda, console.log yordamida name o'
+    // zgaruvchisini ekranga chiqarishda undefined natija qaytariladi.Keyin esa name o 'zgaruvchisiga qiymat beriladi va qayta console.log dan foydalanildiğinda qiymat "John" ko'
+    // rinishida chiqadi.
+
+    // Bunday hoisting faqat
+    // var bilan deklaratsiya qilingan o 'zgaruvchanlarga amal qiladi. let va const bilan e'
+    // lon qilingan o 'zgaruvchilar esa hoistingdan tashqari qoidalarga muvofiq ishlaydi va ularning e'
+    // lon qilingan joyi yo 'qolmaydi.
+
+    // Funksiyalarda ham hoisting jarayoni amalga oshiriladi:
+    sayHello(); // Salom
+
+    function sayHello() {
+        console.log("Salom");
+    }
+    // Bu misolda sayHello funksiya ifodalangan joydan oldin chaqirilgan.Hoisting jarayoni tufayli funksiya e 'lon qilingandan so'
+    // ng ham uni chaqirish mumkin.
+
+    // Bundan tashqari, hoisting faqat deklaratsiya qilish qismiga(deklaratsiya bilan o 'zgaruvchanlarni e'
+    //         lon qilish va funksiyalarni e 'lon qilish qismini tushunish) ta'
+    //         sir qiladi.Boshqa bir ifoda, ifoda qismiga hoisting ta 'siri yo'
+    //         q.
+
+}
